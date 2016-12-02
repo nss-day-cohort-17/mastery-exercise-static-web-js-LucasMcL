@@ -86,12 +86,22 @@ btnEl.addEventListener("click", whenButtonIsPressed);
 
 function whenKeyIsPressed (e) {
   if (e.key === "Enter") {  //checks whether the pressed key is "Enter"
+    if (heightEl.value === "" || charEl.value === "") {
+      // exits function and gives alert if either input field is blank
+      alert("Please fill out all fields")
+      return
+    }
     var myObj = {height: heightEl.value, character: charEl.value}
     buildTree(myObj);
   }
 }
 
-function whenButtonIsPressed (e) {
+function whenButtonIsPressed () {
+  if (heightEl.value === "" || charEl.value === "") {
+    // exits function and gives alert if either input field is blank
+    alert("Please fill out all fields")
+    return
+  }
   var myObj = {height: heightEl.value, character: charEl.value}
   buildTree(myObj);
 }
