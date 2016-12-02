@@ -8,7 +8,17 @@
 // Additional: check to see if tree height input is number
 // Additional: check to see if character input is a length of 1
 
-//
+///////////////////////
+//Get Elements Needed//
+///////////////////////
+
+////////////////////
+//Define Functions//
+////////////////////
+
+///////////////////////
+//Add Event Listeners//
+///////////////////////
 
 
 
