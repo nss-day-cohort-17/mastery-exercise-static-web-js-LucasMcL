@@ -5,6 +5,8 @@
 // Check to see if both fields have values in them
   // Do this within the function?  Elsewhere?
 
+// Can you do carriage returns in a console?
+
 // Additional: check to see if tree height input is number
 // Additional: check to see if character input is a length of 1
 
@@ -18,8 +20,17 @@
 //Define Functions//
 ////////////////////
 
-var buildTree = function(h, char) {
+var buildTree = function(h, inputChar) {
+  var char = inputChar;
+  for (var i = 0; i < h; i++) {
+    console.log(char);
+  }
+}
 
+var testTree = function() {
+  console.log("  0  ");
+  console.log(" 000 ");
+  console.log("00000");
 }
 
 
