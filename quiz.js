@@ -76,6 +76,43 @@ var makeTreeBody = function(n, char) {
 //Add Event Listeners//
 ///////////////////////
 
+// Also adds wrapper functions
+
+//Event listener to listen for enter key button press in either text field
+heightEl.addEventListener("keypress", whenKeyIsPressed);
+charEl.addEventListener("keypress", whenKeyIsPressed);
+btnEl.addEventListener("click", whenButtonIsPressed);
+
+
+function whenKeyIsPressed (e) {
+  if (e.key === "Enter") {  //checks whether the pressed key is "Enter"
+    var myObj = {height: heightEl.value, character: charEl.value}
+    buildTree(myObj);
+  }
+}
+
+function whenButtonIsPressed (e) {
+  var myObj = {height: heightEl.value, character: charEl.value}
+  buildTree(myObj);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
