@@ -20,22 +20,28 @@
 //Define Functions//
 ////////////////////
 
-var buildTree = function(h, inputChar) {
-  var char = inputChar;
+var buildTree = function(h, char) {
   var i = 0;
   while(i < h) {
     //use a while loop rather than a for loop so I can incriment i at beginning of loop
     i += 1;
-    console.log
+
   }
 }
 
 // Function to return a string of white spaces at n length
+// Will be used in buildTree function
 var makeSpaces = function(n) {
   // Empty array created at length n + 1
   // .join method to put spaces between array elements
   // End result is string of spaces length n
   return Array(n + 1).join(" ");
+}
+
+// Function to return a string of repeated character "char" at length n
+// Will be used in buildTree function
+var makeTreeBody = function(n, char) {
+  return Array(n + 1).join(char);
 }
 
 var testTree3 = function() {
