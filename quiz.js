@@ -91,6 +91,8 @@ function whenKeyIsPressed (e) {
       alert("Please fill out all fields");
       return
     }
+
+    // Checks to see if number input is a number and is positive and whole
     if (isNaN(heightEl.value) === true) {
       alert("Please enter a number for the tree height");
       return
@@ -110,6 +112,8 @@ function whenButtonIsPressed () {
     alert("Please fill out all fields")
     return
   }
+
+  // Checks to see if number input is a number and is positive and whole
   if (isNaN(heightEl.value) === true) {
     alert("Please enter a number for the tree height");
     return
