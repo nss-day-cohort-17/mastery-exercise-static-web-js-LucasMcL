@@ -20,12 +20,12 @@
 //Define Functions//
 ////////////////////
 
+
+// Function to print tree to console with height h and character char
 var buildTree = function(h, char) {
   var i = 0;
-  while(i < h) {
-    //use a while loop rather than a for loop so I can incriment i at beginning of loop
-    i += 1;
-
+  for (var i = 1; i <= h; i++) {
+    console.log(makeSpaces(h - i) + makeTreeBody(i*2 - 1, char) + makeSpaces(h - i));
   }
 }
 
@@ -42,21 +42,6 @@ var makeSpaces = function(n) {
 // Will be used in buildTree function
 var makeTreeBody = function(n, char) {
   return Array(n + 1).join(char);
-}
-
-var testTree3 = function() {
-  console.log("  0  ");
-  console.log(" 000 ");
-  console.log("00000");
-}
-
-var testTree6 = function() {
-  console.log("     0     ");
-  console.log("    000    ");
-  console.log("   00000   ");
-  console.log("  0000000  ");
-  console.log(" 000000000 ");
-  console.log("00000000000");
 }
 
 
@@ -79,6 +64,8 @@ var testTree6 = function() {
 
 // The number of characters in each row is equal to the
 // row level (starting with 1, not 0) multiplied by 2, minus 1
+// The number of spaces in each row (on either side) is equal to
+// the total height minus the row number
 
 ///////////////////////
 //Add Event Listeners//
