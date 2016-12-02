@@ -22,8 +22,6 @@ var buildTree = function(h, char) {
 
 }
 
-
-
 ///////////////////////
 //Add Event Listeners//
 ///////////////////////
