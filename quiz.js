@@ -5,8 +5,6 @@
 // Check to see if both fields have values in them
   // Do this within the function?  Elsewhere?
 
-// Can you do carriage returns in a console?
-
 // Additional: check to see if tree height input is number
 // Additional: check to see if character input is a length of 1
 
@@ -22,7 +20,10 @@
 
 
 // Function to print tree to console with height h and character char
-var buildTree = function(h, char) {
+var buildTree = function(obj) {
+  var h = obj.height;
+  var char = obj.character;
+
   var i = 0;
   for (var i = 1; i <= h; i++) {
     console.log(makeSpaces(h - i) + makeTreeBody(i*2 - 1, char) + makeSpaces(h - i));
@@ -64,6 +65,7 @@ var makeTreeBody = function(n, char) {
 
 // The number of characters in each row is equal to the
 // row level (starting with 1, not 0) multiplied by 2, minus 1
+
 // The number of spaces in each row (on either side) is equal to
 // the total height minus the row number
 
