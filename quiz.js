@@ -88,7 +88,15 @@ function whenKeyIsPressed (e) {
   if (e.key === "Enter") {  //checks whether the pressed key is "Enter"
     if (heightEl.value === "" || charEl.value === "") {
       // exits function and gives alert if either input field is blank
-      alert("Please fill out all fields")
+      alert("Please fill out all fields");
+      return
+    }
+    if (isNaN(heightEl.value) === true) {
+      alert("Please enter a number for the tree height");
+      return
+    }
+    if (Number.isInteger(Number(heightEl.value)) === false || heightEl.value < 0) {
+      alert("Please enter a positive whole number")
       return
     }
     var myObj = {height: heightEl.value, character: charEl.value}
@@ -100,6 +108,14 @@ function whenButtonIsPressed () {
   if (heightEl.value === "" || charEl.value === "") {
     // exits function and gives alert if either input field is blank
     alert("Please fill out all fields")
+    return
+  }
+  if (isNaN(heightEl.value) === true) {
+    alert("Please enter a number for the tree height");
+    return
+  }
+  if (Number.isInteger(Number(heightEl.value)) === false || heightEl.value < 0) {
+    alert("Please enter a positive whole number")
     return
   }
   var myObj = {height: heightEl.value, character: charEl.value}
