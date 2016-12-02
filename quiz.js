@@ -12,7 +12,9 @@
 //Get Elements Needed//
 ///////////////////////
 
-
+var heightEl = document.getElementById('input_height');
+var charEl = document.getElementById('input_char');
+var btnEl = document.getElementById('grow_btn');
 
 
 ////////////////////
