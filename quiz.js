@@ -22,6 +22,27 @@ var buildTree = function(h, char) {
 
 }
 
+
+// *
+// ***
+// ***** h = 3, bottom row = 5 wide
+
+// *
+// ***
+// *****
+// *******
+// *********  h = 5, bottom row = 9 wide
+
+// *
+// ***
+// *****
+// *******
+// *********
+// *********** h = 6, bottom row = 11 wide
+
+// The number of characters in each row is equal to the
+// row level (starting with 1, not 0) multiplied by 2, minus 1
+
 ///////////////////////
 //Add Event Listeners//
 ///////////////////////
