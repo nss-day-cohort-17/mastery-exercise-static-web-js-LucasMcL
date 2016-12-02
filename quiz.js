@@ -22,15 +22,26 @@
 
 var buildTree = function(h, inputChar) {
   var char = inputChar;
-  for (var i = 0; i < h; i++) {
-    console.log(char);
+  var i = 0;
+  while(i < h) {
+    //use a while loop rather than a for loop so I can incriment i at beginning of loop
+    i += 1;
   }
 }
 
-var testTree = function() {
+var testTree3 = function() {
   console.log("  0  ");
   console.log(" 000 ");
   console.log("00000");
+}
+
+var testTree6 = function() {
+  console.log("     0     ");
+  console.log("    000    ");
+  console.log("   00000   ");
+  console.log("  0000000  ");
+  console.log(" 000000000 ");
+  console.log("00000000000");
 }
 
 
