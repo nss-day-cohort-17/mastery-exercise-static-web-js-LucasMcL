@@ -18,7 +18,7 @@ var btnEl = document.getElementById('grow_btn');
 
 
 ////////////////////
-//Define Functions//
+//Tree Functions//
 ////////////////////
 
 
@@ -73,16 +73,8 @@ var makeTreeBody = function(n, char) {
 // the total height minus the row number
 
 ///////////////////////
-//Add Event Listeners//
+// Wrapper Functions //
 ///////////////////////
-
-// Also adds wrapper functions
-
-//Event listener to listen for enter key button press in either text field
-heightEl.addEventListener("keypress", whenKeyIsPressed);
-charEl.addEventListener("keypress", whenKeyIsPressed);
-btnEl.addEventListener("click", whenButtonIsPressed);
-
 
 function whenKeyIsPressed (e) {
   if (e.key === "Enter") {  //checks whether the pressed key is "Enter"
@@ -126,25 +118,13 @@ function whenButtonIsPressed () {
   buildTree(myObj);
 }
 
+///////////////////////
+//Add Event Listeners//
+///////////////////////
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Event listener to listen for enter key button press in either text field
+heightEl.addEventListener("keypress", whenKeyIsPressed);
+charEl.addEventListener("keypress", whenKeyIsPressed);
+btnEl.addEventListener("click", whenButtonIsPressed);
 
 
