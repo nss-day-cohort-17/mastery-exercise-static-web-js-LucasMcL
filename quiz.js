@@ -15,6 +15,7 @@
 var heightEl = document.getElementById('input_height');
 var charEl = document.getElementById('input_char');
 var btnEl = document.getElementById('grow_btn');
+var specialEl = document.getElementById('special_btn');
 
 
 ////////////////////
@@ -27,9 +28,22 @@ var buildTree = function(obj) {
   var h = obj.height;
   var char = obj.character;
 
-  var i = 0;
   for (var i = 1; i <= h; i++) {
     console.log(makeSpaces(h - i) + makeTreeBody(i*2 - 1, char) + makeSpaces(h - i));
+  }
+}
+
+// Function to print a special tree
+var buildSpecialTree = function(obj) {
+  var h = obj.height;
+  var char = obj.character;
+  for (var i = 1; i <= h; i++) {
+    var treeBody = makeTreeBody(i*2 - 1, char);
+    treeBody = treeBody.split('');
+    treeBody[0] = "*";
+    treeBody[i*2 - 2] = "*";
+    treeBody = treeBody.join('');
+    console.log(makeSpaces(h - i) + treeBody + makeSpaces(h - i));
   }
 }
 
@@ -72,6 +86,12 @@ var makeTreeBody = function(n, char) {
 // The number of spaces in each row (on either side) is equal to
 // the total height minus the row number
 
+//    *
+//   *0*
+//  *000*
+// *00000*
+//
+
 ///////////////////////
 // Wrapper Functions //
 ///////////////////////
@@ -104,7 +124,6 @@ function whenButtonIsPressed () {
     alert("Please fill out all fields")
     return
   }
-
   // Checks to see if number input is a number and is positive and whole
   if (isNaN(heightEl.value) === true) {
     alert("Please enter a number for the tree height");
@@ -118,6 +137,25 @@ function whenButtonIsPressed () {
   buildTree(myObj);
 }
 
+function whenSpecialButtonIsPressed () {
+  if (heightEl.value === "" || charEl.value === "") {
+    // exits function and gives alert if either input field is blank
+    alert("Please fill out all fields")
+    return
+  }
+  // Checks to see if number input is a number and is positive and whole
+  if (isNaN(heightEl.value) === true) {
+    alert("Please enter a number for the tree height");
+    return
+  }
+  if (Number.isInteger(Number(heightEl.value)) === false || heightEl.value < 0) {
+    alert("Please enter a positive whole number")
+    return
+  }
+  var myObj = {height: heightEl.value, character: charEl.value}
+  buildSpecialTree(myObj);
+}
+
 ///////////////////////
 //Add Event Listeners//
 ///////////////////////
@@ -126,5 +164,7 @@ function whenButtonIsPressed () {
 heightEl.addEventListener("keypress", whenKeyIsPressed);
 charEl.addEventListener("keypress", whenKeyIsPressed);
 btnEl.addEventListener("click", whenButtonIsPressed);
+specialEl.addEventListener("click", whenSpecialButtonIsPressed);
+
 
 
